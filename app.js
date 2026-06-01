@@ -253,7 +253,7 @@ function initVCardDownload() {
       'FN:Kishan Sondagar',
       'ORG:Kishan Sondagar Web Development',
       'TITLE:Web Developer',
-      'TEL;TYPE=CELL,VOICE:6353373957',
+      'TEL;TYPE=CELL,VOICE:+916353373957',
       'EMAIL;TYPE=PREF,INTERNET:gajjarsk111@gmail.com',
       'URL:https://kishan-sondagar-portfolio.vercel.app/',
       'NOTE:Web Developer specializing in responsive portfolios, business websites, and landing pages.',
