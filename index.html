@@ -10,22 +10,22 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kishan-sondagar-portfolio.vercel.app/">
-  <meta property="og:title" content="Kishan Sondagar | Digital Connection Hub">
-  <meta property="og:description" content="Connect with Kishan Sondagar, Web Developer. Save contact details, chat on WhatsApp, or browse portfolio instantly.">
+  <meta property="og:title" content="Kishan Sondagar | Professional Connection Hub">
+  <meta property="og:description" content="Connect with Kishan Sondagar, Elite Web Developer. Save contact details, chat on WhatsApp, or browse portfolio instantly.">
   <meta property="og:image" content="https://kishan-sondagar-portfolio.vercel.app/assets/hero-studio.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://kishan-sondagar-portfolio.vercel.app/">
-  <meta property="twitter:title" content="Kishan Sondagar | Digital Connection Hub">
-  <meta property="twitter:description" content="Connect with Kishan Sondagar, Web Developer. Save contact details, chat on WhatsApp, or browse portfolio instantly.">
+  <meta property="twitter:title" content="Kishan Sondagar | Professional Connection Hub">
+  <meta property="twitter:description" content="Connect with Kishan Sondagar, Elite Web Developer. Save contact details, chat on WhatsApp, or browse portfolio instantly.">
   
-  <title>Kishan Sondagar | Digital Business Card & Connect Hub</title>
+  <title>Kishan Sondagar | Pro Web Developer Connection Hub</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -36,6 +36,7 @@
     <div class="glow-sphere glow-1"></div>
     <div class="glow-sphere glow-2"></div>
     <div class="glow-sphere glow-3"></div>
+    <div class="interactive-glow-spot" id="glowSpot"></div>
     <div class="grid-overlay"></div>
   </div>
 
@@ -49,20 +50,23 @@
       </div>
       <div class="availability-badge">
         <span class="pulse-dot"></span>
-        <span class="badge-text">Available For Work</span>
+        <span class="badge-text">SYSTEMS ACTIVE</span>
       </div>
     </header>
 
     <!-- Main Content -->
     <main class="main-content">
       
-      <!-- Premium Glassmorphic Profile Card (Replace Card Preview) -->
+      <!-- Premium Glassmorphic Profile Card -->
       <section class="profile-card animate-slide-up" style="--delay: 1;">
-        <div class="profile-glow-ring"></div>
+        <div class="profile-glow-ring" aria-hidden="true"></div>
+        <div class="card-corner-decor border-tl"></div>
+        <div class="card-corner-decor border-tr"></div>
         
         <!-- Animated Avatar Ring -->
         <div class="profile-avatar-container">
           <div class="avatar-orbit-ring ring-outer"></div>
+          <div class="avatar-orbit-ring ring-middle"></div>
           <div class="avatar-orbit-ring ring-inner"></div>
           <div class="profile-avatar">
             <span class="avatar-text">KS</span>
@@ -75,7 +79,7 @@
           
           <div class="role-badge">
             <svg class="code-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            <span>WEB DEVELOPER</span>
+            <span>FULL-STACK WEB DEV</span>
           </div>
 
           <p class="location-text">
@@ -84,8 +88,27 @@
           </p>
 
           <p class="profile-tagline">
-            Building high-end, responsive websites with interactive UI, clean code structures, and seamless front-end craft.
+            Engineering elite front-end architectures with rich micro-animations, high-speed loading optimization, and modern deployment scaling.
           </p>
+        </div>
+
+        <!-- Pro Analytics Developer Metrics Dashboard -->
+        <div class="dev-metrics">
+          <div class="metric-card">
+            <div class="metric-glow"></div>
+            <span class="metric-num">7.04</span>
+            <span class="metric-label">BCA CGPA</span>
+          </div>
+          <div class="metric-card">
+            <div class="metric-glow"></div>
+            <span class="metric-num">11+</span>
+            <span class="metric-label">Projects</span>
+          </div>
+          <div class="metric-card">
+            <div class="metric-glow"></div>
+            <span class="metric-num">100%</span>
+            <span class="metric-label">Clean Code</span>
+          </div>
         </div>
 
         <!-- Mini Contact Badges -->
@@ -101,10 +124,10 @@
         </div>
       </section>
 
-      <!-- Primary Action Hub (Glassmorphism Section) -->
+      <!-- Primary Action Hub -->
       <section class="action-hub animate-slide-up" style="--delay: 2;">
         
-        <!-- SAVE CONTACT (vCard) - The most critical action -->
+        <!-- SAVE CONTACT (vCard) -->
         <button class="btn-action btn-save-contact" id="btnSaveContact" aria-label="Save Kishan Sondagar's contact details">
           <div class="btn-glow-layer"></div>
           <div class="btn-content">
@@ -174,9 +197,29 @@
 
       </section>
 
-      <!-- Services List Section (Matches card's 'What I can build') -->
-      <section class="services-showcase animate-slide-up" style="--delay: 3;">
-        <h3 class="section-title text-center">My Web Specialities</h3>
+      <!-- Pro Terminal Widget Console (Interactive-feel widget) -->
+      <section class="terminal-widget animate-slide-up" style="--delay: 3;">
+        <div class="terminal-header">
+          <div class="window-buttons">
+            <span class="t-dot t-red"></span>
+            <span class="t-dot t-yellow"></span>
+            <span class="t-dot t-green"></span>
+          </div>
+          <span class="terminal-title">kishan-console.sh</span>
+        </div>
+        <div class="terminal-body font-mono">
+          <div class="terminal-line"><span class="t-prompt">$</span> <span class="typing-text">npm init online-presence --with-kishan</span></div>
+          <div class="terminal-output">
+            <p class="t-success">> Core setup ready. Fetching specialities...</p>
+            <p class="t-info">> Specialities loaded: Business & Portfolio sites, Redesign, Speed & SEO.</p>
+            <p class="t-warning">> Status: Available for hire. Let's build your project!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services List Section -->
+      <section class="services-showcase animate-slide-up" style="--delay: 4;">
+        <h3 class="section-title text-center">Development Capabilities</h3>
         <div class="services-grid">
           
           <div class="service-item-card">
@@ -185,7 +228,7 @@
             </div>
             <div class="svc-content">
               <h4>Business Websites</h4>
-              <p>High-end digital presence custom-built to attract customers and establish your business brand.</p>
+              <p>Premium corporate portals styled with elegant visuals to build digital trust and drive scaling.</p>
             </div>
           </div>
 
@@ -195,7 +238,7 @@
             </div>
             <div class="svc-content">
               <h4>Portfolio Websites</h4>
-              <p>Creative interactive portfolios to showcase work, credentials, and achievements with stunning UI/UX.</p>
+              <p>High-end interactive visual portfolios designed to demonstrate skills and stun visitors.</p>
             </div>
           </div>
 
@@ -205,7 +248,7 @@
             </div>
             <div class="svc-content">
               <h4>Landing Pages</h4>
-              <p>Laser-focused high-conversion marketing pages designed to turn visitors into leads and customers.</p>
+              <p>Conversion-focused layouts optimized for marketing campaigns, SaaS products, or app launches.</p>
             </div>
           </div>
 
@@ -215,7 +258,7 @@
             </div>
             <div class="svc-content">
               <h4>Website Redesign</h4>
-              <p>Transforming outdated websites into modern, fast, responsive web systems with pristine code.</p>
+              <p>Migrating slow, dated systems into cutting-edge responsive environments with pristine front-end code.</p>
             </div>
           </div>
 
@@ -225,15 +268,42 @@
             </div>
             <div class="svc-content">
               <h4>SEO Optimization</h4>
-              <p>Strategic technical search-friendly structures to secure maximum discoverability on Google.</p>
+              <p>Perfect semantic HTML indexing, fast page loads, and structured metadata for higher Google ranking.</p>
             </div>
           </div>
 
         </div>
       </section>
 
-      <!-- Social Networks Connectivity Hub (Updated with custom social links) -->
-      <section class="socials-connect text-center animate-slide-up" style="--delay: 4;">
+      <!-- Dynamic Skills Marquee (Ticker Loop) -->
+      <section class="skills-ticker-section animate-slide-up" style="--delay: 4.5;">
+        <div class="skills-ticker-wrapper">
+          <div class="skills-ticker-track">
+            <span>HTML5 ✦</span>
+            <span>CSS3 ●</span>
+            <span>JAVASCRIPT ◆</span>
+            <span>GIT ⊚</span>
+            <span>VERCEL ▲</span>
+            <span>NETLIFY ✦</span>
+            <span>SEO ●</span>
+            <span>MONGODB ◆</span>
+            <span>SUPABASE ⊚</span>
+            <!-- Duplicate for seamless scroll -->
+            <span>HTML5 ✦</span>
+            <span>CSS3 ●</span>
+            <span>JAVASCRIPT ◆</span>
+            <span>GIT ⊚</span>
+            <span>VERCEL ▲</span>
+            <span>NETLIFY ✦</span>
+            <span>SEO ●</span>
+            <span>MONGODB ◆</span>
+            <span>SUPABASE ⊚</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Social Networks Connectivity Hub -->
+      <section class="socials-connect text-center animate-slide-up" style="--delay: 5;">
         <h3 class="section-title">Follow & Connect On Socials</h3>
         <div class="social-links-grid">
           
@@ -261,7 +331,7 @@
       </section>
 
       <!-- Instant Quick Share Link Card -->
-      <section class="share-connection text-center animate-slide-up" style="--delay: 5;">
+      <section class="share-connection text-center animate-slide-up" style="--delay: 5.5;">
         <button class="btn-share-card" id="btnShareCard" aria-label="Share this digital card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13"/></svg>
           <span>Share My Digital Card</span>

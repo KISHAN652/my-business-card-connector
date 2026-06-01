@@ -1,15 +1,40 @@
 /**
  * Dynamic Logic for Kishan Sondagar's Digital Connection Card Hub
+ * Designed for elite performance and high-end interactive visual craft.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initSpotlight();
   initVCardDownload();
   initWebShare();
 });
 
 /**
- * 1. vCard (.vcf) Generator & Dynamic Downloader
- * Instantly builds a standard compliant contact card and starts download.
+ * 1. Interactive Spotlight Tracker
+ * Updates CSS custom variables with cursor/touch position to run the radial neon spot.
+ */
+function initSpotlight() {
+  const glowSpot = document.getElementById('glowSpot');
+  if (!glowSpot) return;
+
+  // Mouse Move tracking for Desktop
+  window.addEventListener('mousemove', (e) => {
+    document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+    document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+  });
+
+  // Touch Move tracking for Mobile Devices
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches && e.touches[0]) {
+      document.documentElement.style.setProperty('--mouse-x', `${e.touches[0].clientX}px`);
+      document.documentElement.style.setProperty('--mouse-y', `${e.touches[0].clientY}px`);
+    }
+  }, { passive: true });
+}
+
+/**
+ * 2. vCard (.vcf) Generator & Downloader
+ * Instantly compiles a high-compatibility virtual contact card file.
  */
 function initVCardDownload() {
   const btnSaveContact = document.getElementById('btnSaveContact');
@@ -70,7 +95,7 @@ function initVCardDownload() {
 }
 
 /**
- * 2. Web Share API & Copy Link System
+ * 3. Web Share API & Copy Link System
  * Uses mobile native sharing capabilities when available, fallbacks to clipboard copying.
  */
 function initWebShare() {
