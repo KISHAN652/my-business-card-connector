@@ -1,39 +1,243 @@
 /**
  * Dynamic Logic for Kishan Sondagar's Digital Connection Card Hub
- * Designed for elite performance and high-end interactive visual craft.
+ * Elite Pro Tier: HTML5 Particle Canvas, Typewriter Terminal, and Counting Metrics.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initSpotlight();
+  initParticleCanvas();
+  initDynamicPing();
+  initTypewriterTerminal();
+  initMetricCounters();
   initVCardDownload();
   initWebShare();
 });
 
 /**
- * 1. Interactive Spotlight Tracker
- * Updates CSS custom variables with cursor/touch position to run the radial neon spot.
+ * 1. Interactive Neural Network Particle Background
+ * High-performance HTML5 Canvas simulation that attracts particles to mouse/touch.
  */
-function initSpotlight() {
-  const glowSpot = document.getElementById('glowSpot');
-  if (!glowSpot) return;
+function initParticleCanvas() {
+  const canvas = document.getElementById('particleCanvas');
+  if (!canvas) return;
 
-  // Mouse Move tracking for Desktop
-  window.addEventListener('mousemove', (e) => {
-    document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
-    document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+  const ctx = canvas.getContext('2d');
+  let animationFrameId;
+
+  // Track viewport dimensions
+  let width = (canvas.width = window.innerWidth);
+  let height = (canvas.height = window.innerHeight);
+
+  // Particle Settings
+  const particles = [];
+  const particleCount = Math.min(45, Math.floor((width * height) / 18000)); // Adaptive count based on device resolution
+  const connectionDistance = 100;
+  const mouse = { x: null, y: null, active: false };
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.vx = (Math.random() - 0.5) * 0.4;
+      this.vy = (Math.random() - 0.5) * 0.4;
+      this.radius = Math.random() * 1.5 + 1;
+    }
+
+    update() {
+      // Float drift velocities
+      this.x += this.vx;
+      this.y += this.vy;
+
+      // Bounce off borders
+      if (this.x < 0 || this.x > width) this.vx *= -1;
+      if (this.y < 0 || this.y > height) this.vy *= -1;
+
+      // Gentle interactive gravity towards touch/cursor
+      if (mouse.active) {
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const dist = Math.hypot(dx, dy);
+        
+        if (dist < 150) {
+          this.x += dx * 0.005;
+          this.y += dy * 0.005;
+        }
+      }
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(184, 98, 235, 0.4)';
+      ctx.fill();
+    }
+  }
+
+  // Populate particles array
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+  }
+
+  // Draw linking meshes
+  function drawConnections() {
+    for (let i = 0; i < particles.length; i++) {
+      const p1 = particles[i];
+      
+      // Link to cursor if nearby
+      if (mouse.active) {
+        const distToMouse = Math.hypot(mouse.x - p1.x, mouse.y - p1.y);
+        if (distToMouse < 140) {
+          const alpha = (1 - distToMouse / 140) * 0.35;
+          ctx.beginPath();
+          ctx.moveTo(p1.x, p1.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = `rgba(6, 182, 212, ${alpha})`;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+
+      // Link to adjacent particles
+      for (let j = i + 1; j < particles.length; j++) {
+        const p2 = particles[j];
+        const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+
+        if (dist < connectionDistance) {
+          const alpha = (1 - dist / connectionDistance) * 0.22;
+          ctx.beginPath();
+          ctx.moveTo(p1.x, p1.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = `rgba(184, 98, 235, ${alpha})`;
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  // Animation Core Loop
+  function loop() {
+    ctx.clearRect(0, 0, width, height);
+
+    particles.forEach(p => {
+      p.update();
+      p.draw();
+    });
+
+    drawConnections();
+    animationFrameId = requestAnimationFrame(loop);
+  }
+
+  // Resize handler
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
   });
 
-  // Touch Move tracking for Mobile Devices
+  // Mouse & Touch events
+  const handleMove = (x, y) => {
+    mouse.x = x;
+    mouse.y = y;
+    mouse.active = true;
+  };
+
+  window.addEventListener('mousemove', (e) => handleMove(e.clientX, e.clientY));
+  window.addEventListener('mouseleave', () => mouse.active = false);
+
   window.addEventListener('touchmove', (e) => {
     if (e.touches && e.touches[0]) {
-      document.documentElement.style.setProperty('--mouse-x', `${e.touches[0].clientX}px`);
-      document.documentElement.style.setProperty('--mouse-y', `${e.touches[0].clientY}px`);
+      handleMove(e.touches[0].clientX, e.touches[0].clientY);
     }
   }, { passive: true });
+  window.addEventListener('touchend', () => mouse.active = false);
+
+  loop();
 }
 
 /**
- * 2. vCard (.vcf) Generator & Downloader
+ * 2. Dynamic Status Diagnostics Ping
+ * Continuously fluctuates a simulated server connection speed to enhance tech feel.
+ */
+function initDynamicPing() {
+  const pingStatus = document.getElementById('pingStatus');
+  if (!pingStatus) return;
+
+  setInterval(() => {
+    const randomPing = Math.floor(Math.random() * 8) + 11; // 11ms to 18ms
+    pingStatus.textContent = `SECURE CONNECT // ${randomPing}ms`;
+  }, 4000);
+}
+
+/**
+ * 3. Typewriter Terminal Simulator
+ * Elegantly types commands and compiler outputs with staggered dynamic delays.
+ */
+function initTypewriterTerminal() {
+  const outputContainer = document.getElementById('terminalOutput');
+  const typingPrompt = document.getElementById('terminalTyping');
+  if (!outputContainer || !typingPrompt) return;
+
+  const logs = [
+    { text: '> Initializing Kishan Core Engine v4.2.1...', class: 't-success' },
+    { text: '> [OK] Modules deployed: Business Web, Portfolio, SEO & Latency Optimization.', class: 't-info' },
+    { text: '> System Operational. Ready to engineer your online presence!', class: 't-warning' }
+  ];
+
+  let logIndex = 0;
+  
+  // Staggered output loader
+  function loadNextLog() {
+    if (logIndex < logs.length) {
+      const p = document.createElement('p');
+      p.className = logs[logIndex].class;
+      p.textContent = logs[logIndex].text;
+      outputContainer.appendChild(p);
+      logIndex++;
+      
+      // Delay before typing subsequent lines
+      setTimeout(loadNextLog, 1200);
+    }
+  }
+
+  // Trigger terminal script typing and launch log outputs
+  setTimeout(() => {
+    typingPrompt.style.animation = 'none';
+    typingPrompt.style.borderRight = 'none';
+    setTimeout(loadNextLog, 600);
+  }, 2200);
+}
+
+/**
+ * 4. Metrics counting animation
+ * Smoothly rolls metrics stats from zero to target values on load.
+ */
+function initMetricCounters() {
+  const counters = document.querySelectorAll('.count-up');
+  
+  counters.forEach(counter => {
+    const target = parseFloat(counter.getAttribute('data-target'));
+    const decimals = parseInt(counter.getAttribute('data-decimals')) || 0;
+    const suffix = counter.getAttribute('data-suffix') || '';
+    
+    let current = 0;
+    const duration = 1800; // ms
+    const stepTime = 16; // approx 60fps
+    const steps = duration / stepTime;
+    const increment = target / steps;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      
+      counter.textContent = current.toFixed(decimals) + suffix;
+    }, stepTime);
+  });
+}
+
+/**
+ * 5. vCard (.vcf) Generator & Downloader
  * Instantly compiles a high-compatibility virtual contact card file.
  */
 function initVCardDownload() {
@@ -95,7 +299,7 @@ function initVCardDownload() {
 }
 
 /**
- * 3. Web Share API & Copy Link System
+ * 6. Web Share API & Copy Link System
  * Uses mobile native sharing capabilities when available, fallbacks to clipboard copying.
  */
 function initWebShare() {

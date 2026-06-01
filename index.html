@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Connect with Kishan Sondagar, Web Developer. Save contact, message on WhatsApp, view portfolio, or send email for professional web development services.">
+  <meta name="description" content="Connect with Kishan Sondagar, Elite Web Developer. Save contact, message on WhatsApp, view portfolio, or send email for professional web development services.">
   <meta name="keywords" content="Kishan Sondagar, Web Developer, Portfolio, Digital Business Card, Save Contact, vCard, Gujarat, Rajkot">
   <meta name="author" content="Kishan Sondagar">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kishan-sondagar-portfolio.vercel.app/">
-  <meta property="og:title" content="Kishan Sondagar | Professional Connection Hub">
+  <meta property="og:title" content="Kishan Sondagar | Elite Developer Connection Portal">
   <meta property="og:description" content="Connect with Kishan Sondagar, Elite Web Developer. Save contact details, chat on WhatsApp, or browse portfolio instantly.">
   <meta property="og:image" content="https://kishan-sondagar-portfolio.vercel.app/assets/hero-studio.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://kishan-sondagar-portfolio.vercel.app/">
-  <meta property="twitter:title" content="Kishan Sondagar | Professional Connection Hub">
+  <meta property="twitter:title" content="Kishan Sondagar | Elite Developer Connection Portal">
   <meta property="twitter:description" content="Connect with Kishan Sondagar, Elite Web Developer. Save contact details, chat on WhatsApp, or browse portfolio instantly.">
   
-  <title>Kishan Sondagar | Pro Web Developer Connection Hub</title>
+  <title>Kishan Sondagar | Elite Developer Connection Portal</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,18 +31,20 @@
 </head>
 <body>
 
+  <!-- Interactive Canvas Particle Network Background -->
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
   <!-- Dynamic Futuristic Radial Background Glows -->
   <div class="bg-glows" aria-hidden="true">
     <div class="glow-sphere glow-1"></div>
     <div class="glow-sphere glow-2"></div>
     <div class="glow-sphere glow-3"></div>
-    <div class="interactive-glow-spot" id="glowSpot"></div>
     <div class="grid-overlay"></div>
   </div>
 
   <div class="app-container">
     
-    <!-- Header with Availability Pulsing Badge -->
+    <!-- Header with System Diagnostics Status -->
     <header class="header animate-fade-in">
       <div class="brand">
         <span class="brand-logo">KS</span>
@@ -50,20 +52,25 @@
       </div>
       <div class="availability-badge">
         <span class="pulse-dot"></span>
-        <span class="badge-text">SYSTEMS ACTIVE</span>
+        <span class="badge-text" id="pingStatus">SECURE CONNECT // 14ms</span>
       </div>
     </header>
 
     <!-- Main Content -->
     <main class="main-content">
       
-      <!-- Premium Glassmorphic Profile Card -->
+      <!-- Premium Glassmorphic Profile Card with Tech Corner Decor -->
       <section class="profile-card animate-slide-up" style="--delay: 1;">
         <div class="profile-glow-ring" aria-hidden="true"></div>
+        
+        <!-- Cybernetic Grid Decorative Accent -->
+        <div class="card-tech-grid" aria-hidden="true"></div>
         <div class="card-corner-decor border-tl"></div>
         <div class="card-corner-decor border-tr"></div>
+        <div class="card-corner-decor border-bl"></div>
+        <div class="card-corner-decor border-br"></div>
         
-        <!-- Animated Avatar Ring -->
+        <!-- Animated Hologram Avatar Ring -->
         <div class="profile-avatar-container">
           <div class="avatar-orbit-ring ring-outer"></div>
           <div class="avatar-orbit-ring ring-middle"></div>
@@ -79,7 +86,7 @@
           
           <div class="role-badge">
             <svg class="code-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            <span>FULL-STACK WEB DEV</span>
+            <span>ELITE WEB DEVELOPER</span>
           </div>
 
           <p class="location-text">
@@ -88,7 +95,7 @@
           </p>
 
           <p class="profile-tagline">
-            Engineering elite front-end architectures with rich micro-animations, high-speed loading optimization, and modern deployment scaling.
+            Engineering premium responsive web products with liquid transitions, modular frameworks, optimized performance, and elite front-end craftsmanship.
           </p>
         </div>
 
@@ -96,17 +103,17 @@
         <div class="dev-metrics">
           <div class="metric-card">
             <div class="metric-glow"></div>
-            <span class="metric-num">7.04</span>
+            <span class="metric-num count-up" data-target="7.04" data-decimals="2">0.00</span>
             <span class="metric-label">BCA CGPA</span>
           </div>
           <div class="metric-card">
             <div class="metric-glow"></div>
-            <span class="metric-num">11+</span>
+            <span class="metric-num count-up" data-target="11" data-suffix="+">0</span>
             <span class="metric-label">Projects</span>
           </div>
           <div class="metric-card">
             <div class="metric-glow"></div>
-            <span class="metric-num">100%</span>
+            <span class="metric-num count-up" data-target="100" data-suffix="%">0</span>
             <span class="metric-label">Clean Code</span>
           </div>
         </div>
@@ -208,11 +215,9 @@
           <span class="terminal-title">kishan-console.sh</span>
         </div>
         <div class="terminal-body font-mono">
-          <div class="terminal-line"><span class="t-prompt">$</span> <span class="typing-text">npm init online-presence --with-kishan</span></div>
-          <div class="terminal-output">
-            <p class="t-success">> Core setup ready. Fetching specialities...</p>
-            <p class="t-info">> Specialities loaded: Business & Portfolio sites, Redesign, Speed & SEO.</p>
-            <p class="t-warning">> Status: Available for hire. Let's build your project!</p>
+          <div class="terminal-line"><span class="t-prompt">$</span> <span class="typing-text" id="terminalTyping">npm init online-presence --with-kishan</span></div>
+          <div class="terminal-output" id="terminalOutput">
+            <!-- Dynamically populated via JS to create absolute premium typewriter effect -->
           </div>
         </div>
       </section>
